@@ -1,0 +1,22 @@
+{
+  "name": "parse-sendgrid-adapter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://asifrahman007@github.com/asifrahman007/parse-sendgrid-adapter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asifrahman007/parse-sendgrid-adapter/issues"
+  },
+  "homepage": "https://github.com/asifrahman007/parse-sendgrid-adapter#readme",
+  "dependencies": {
+    "@sendgrid/mail": "^7.6.2"
+  }
+}
