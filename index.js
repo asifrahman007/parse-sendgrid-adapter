@@ -30,7 +30,8 @@ module.exports = ({
       templateId,
       dynamic_template_data
     };
-    return sgMail.send(mail);
+
+    return !dynamic_template_data.isSocialAuth ? sgMail.send(mail) : Promise.resolve();
   };
 
   const sendPasswordResetEmail = ({ link, appName, user }) => {
@@ -54,7 +55,8 @@ module.exports = ({
         appName,
         email: user.get("email") || user.get("username"),
         name: user.get("name"),
-        type: user.get("type")
+        type: user.get("type"),
+        isSocialAuth: user.get("isSocialAuth")
       }
     });
   };
