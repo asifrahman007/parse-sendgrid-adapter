@@ -6,14 +6,14 @@ module.exports = ({
   passwordResetEmailTemplate,
   verificationEmailTemplate
 }) => {
-  if (!apiKey || !from)
-    throw "SendGridAdapter requires an API Key && from Email Address";
+  if (!from)
+    throw "SendGridAdapter requires a from Email Address";
   if (!passwordResetEmailTemplate)
     throw "SendGridAdapter requires password reset email template";
   if (!verificationEmailTemplate)
     throw "SendGridAdapter requires verification email template";
 
-  sgMail.setApiKey(apiKey);
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
   const sendMail = ({
     to,
